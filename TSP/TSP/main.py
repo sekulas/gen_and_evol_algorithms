@@ -13,8 +13,8 @@ cities = [
     City("I", 8, 5),
     City("J", 9, 2)
 ]
-popsize = 20
-generations = 200
+popsize = 30
+generations = 100
 pmutation = 0.01
 pcross = 0.7
 

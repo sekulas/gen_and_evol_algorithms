@@ -101,14 +101,14 @@ class Population:
         if not flip(pcross):
             return parent1, parent2
 
-        jcross1 = rnd(1, len(parent1) - 2)
+        jcross1 = rnd(0, len(parent1) - 2)
         jcross2 = rnd(jcross1 + 1, len(parent1) - 1)
         
-        section1 = parent1.cities[jcross1:jcross2]
-        section2 = parent2.cities[jcross1:jcross2]
+        section1 = parent1[jcross1:jcross2]
+        section2 = parent2[jcross1:jcross2]
         
-        remaining1 = [city for city in parent2.cities if city not in section1]
-        remaining2 = [city for city in parent1.cities if city not in section2]
+        remaining1 = [city for city in parent2 if city not in section1]
+        remaining2 = [city for city in parent1 if city not in section2]
         
         child1_cities = remaining1[:jcross1] + section1 + remaining1[jcross1:]
         child2_cities = remaining2[:jcross1] + section2 + remaining2[jcross1:]
